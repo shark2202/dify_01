@@ -1,0 +1,29 @@
+provider: mymodels  # 供应商标识
+label:  # 供应商展示名称，可设置 en_US 英文、zh_Hans 中文两种语言，zh_Hans 不设置将默认使用 en_US。
+  en_US: mymodels
+icon_small:  # 供应商小图标，存储在对应供应商实现目录下的 _assets 目录，中英文策略同 label
+  en_US: icon_s_en.svg
+icon_large:  # 供应商大图标，存储在对应供应商实现目录下的 _assets 目录，中英文策略同 label
+  en_US: icon_l_en.svg
+supported_model_types:  # 支持的模型类型，仅支持 LLM
+- llm
+configurate_methods:  # 支持的配置方式，仅支持预定义模型
+- predefined-model
+provider_credential_schema:  # 供应商凭据规则，仅支持预定义模型，则需要定义统一供应商凭据规则
+  credential_form_schemas:  # 凭据表单项列表
+  - variable: mymodels_api_key  # 凭据参数变量名
+    label:  # 展示名称
+      en_US: API Key
+    type: secret-input  # 表单类型，此处 secret-input 代表加密信息输入框，编辑时只展示屏蔽后的信息。
+    required: true  # 是否必填
+    placeholder:  # PlaceHolder 信息
+      zh_Hans: 在此输入您的 API Key
+      en_US: Enter your API Key
+  - variable: mymodels_api_url
+    label:
+      en_US: API URL
+    type: text-input  # 表单类型，此处 text-input 代表文本输入框
+    required: false
+    placeholder:
+      zh_Hans: 在此输入您的 API URL
+      en_US: Enter your API URL

@@ -1,0 +1,13 @@
+identity:
+  author: mytools
+  name: mytools
+  label:
+    en_US: mytools
+    zh_Hans: mytools
+  description:
+    en_US: mytools
+    zh_Hans: mytools
+  tags:
+    - other
+  icon: icon.png
+credentials_for_provider: #认证配置
